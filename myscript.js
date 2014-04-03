@@ -1,10 +1,11 @@
 
-var addTask = function() {
-	if (event.keyCode == 13) {
+var addTask = function(e) {
+	var code = e.keyCode ? e.keyCode : e.which;
+	if (code === 13) {
 		// read task list
 		var task_list = document.getElementById("task list");
 		// get first element of list
-		var firstChild = task_list.firstChild
+		var firstChild = task_list.firstChild;
 		// read value of text input
 		var new_task = document.getElementById("new_task").value;
 		// clear text from input
@@ -28,7 +29,7 @@ var addTask = function() {
 		// append to list item
 		li.appendChild(label);
 		// insert in front of task list
-		task_list.insertBefore(li, firstChild);		
+		task_list.insertBefore(li, firstChild);
 	}
 }
 
